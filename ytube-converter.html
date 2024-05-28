@@ -70,9 +70,10 @@
                     <div id="navbarNav">
                         <div class="flex gap-[40px] items-center screen991:!flex-col">
                             <div class="header-links-left flex gap-[16px] screen991:!flex-col">
-                                <a href="index.html" class="nav-link ">Youtube Downloader</a>
-                                <a href="ytube-converter.html" class="nav-link active">Youtube Converter</a>
-                                <a href="ytube-to-mp3.html" class="nav-link">Youtube to MP3</a>
+
+                                <!-- <a href="index.html" class="nav-link nav1">Youtube Downloader</a>
+                                <a href="ytube-converter.html" class="nav-link active nav2">Youtube Converter</a>
+                                <a href="ytube-to-mp3.html" class="nav-link nav3">Youtube to MP3</a> -->
                             </div>
 
                             <!-- <div class="drop-down">
@@ -97,30 +98,15 @@
                             </div>
                         </div> -->
 
-                            <select class="language-select">
-                                <option>Deutsch</option>
-                                <option>Español</option>
-                                <option selected>English</option>
-                                <option>Hindi</option>
-                                <option>Français</option>
-                                <option>Indonesian</option>
-                                <option>日本語</option>
-                                <option>한국어</option>
-                                <option>Malay</option>
-                                <option>Filipino</option>
-                                <option>Português</option>
-                                <option>Русский</option>
-                                <option>ไทย</option>
-                                <option>Türkçe</option>
-                                <option>العربية</option>
-                                <option>Tiếng Việt</option>
-                            </select>
+                            <div class="languageSwitcher">
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </nav>
-
     </header>
 
     <section class="download-sec ">
@@ -133,7 +119,10 @@
                 </svg>
             </div>
             <div class="download">
-                <h1><span class="down-span">YouTube Converter-</span> YouTube to MP3, MP4, AVI, FLV, ...
+                <h1 class="converter-download">
+                    <span class="down-span  yConverter "></span>
+                    <span class="converterHead">
+                    </span>
                 </h1>
             </div>
             <div class="download-link pb-[104px]">
@@ -252,7 +241,7 @@
     </footer>
 
 
-    <script src="assets/js/custom.js"></script>
+    <script src="./assets/js/custom.js"></script>
 </body>
 
 </html>

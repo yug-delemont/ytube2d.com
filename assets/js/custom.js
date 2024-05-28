@@ -50,11 +50,259 @@ alert("width:" + wid +"px and height: " + hei + "px.")
 //   $(this).toggleClass("open");
 // });
 
-//navbar
 document.querySelector("#nav-btn").addEventListener("click", function () {
-  // document.querySelector("html").classList.toggle("show-menu");
   document.querySelector("html").classList.toggle("show-menu");
 });
+
+document.querySelector(".header-links-left").innerHTML = `
+  <a href="index.html" class="nav-link nav1"></a>
+  <a href="ytube-converter.html" class="nav-link nav2"></a>
+  <a href="ytube-to-mp3.html" class="nav-link nav3"></a>
+`;
+
+document.querySelector(".languageSwitcher").innerHTML = `
+<select class="language-select languageSelect">
+  <option value="en">English</option>
+  <option value="de">Deutsch</option>
+  <option value="es">Español</option>
+  <option value="hi">Hindi</option>
+  <option value="fr">Français</option>
+  <option value="in">Indonesian</option>
+  <option value="ja">日本語</option>
+  <option value="ko">한국어</option>
+  <option value="ma">Malay</option>
+  <option value="fi">Filipino</option>
+  <option value="po">Português</option>
+  <option value="ru">Русский</option>
+  <option value="th">ไทย</option>
+  <option value="tur">Türkçe</option>
+  <option value="ar">العربية</option>
+  <option value="vi">Tiếng Việt</option>
+</select>;
+`;
+
+// languages
+
+let translations = {
+  de: {
+    nav1: "YouTube Downloader",
+    nav2: "Youtube Umwandler",
+    nav3: "YouTube zu mp3",
+    downSpan: "herunterladen",
+    headline: "Hochwertige Videos Von YouTube",
+    yConverter: "Youtube Umwandler -",
+    converterHead: "YouTube zu MP3, MP4, AVI, FLV, ...",
+  },
+  es: {
+    nav1: "descargador de youtube",
+    nav2: "Convertidor de youtube",
+    nav3: "Youtube a mp3",
+    downSpan: "descargar",
+    headline: "Vídeos de alta calidad de YouTube",
+  },
+  en: {
+    nav1: "Youtube Downloader",
+    nav2: "Youtube Converter",
+    nav3: "Youtube to MP3",
+    downSpan: "Download",
+    headline: "High-Quality videos From YouTube",
+    yConverter: "YouTube Converter- ",
+    converterHead: "YouTube to MP3, MP4, AVI, FLV, ...",
+  },
+  hi: {
+    nav1: "यूट्यूब डाउनलोडर",
+    nav2: "यूट्यूब परिवर्तक",
+    nav3: "एमपी 3 के लिए यूट्यूब",
+    downSpan: "डाउनलोड करना",
+    headline: "यूट्यूब से उच्च गुणवत्ता वाले वीडियो",
+  },
+  fr: {
+    nav1: "Téléchargeur YouTube",
+    nav2: "Convertisseur youtube",
+    nav3: "Youtube en mp3",
+    downSpan: "Télécharger",
+    headline: "Vidéos de haute qualité de YouTube",
+  },
+  in: {
+    nav1: "pengunduh Youtube",
+    nav2: "Konverter Youtube",
+    nav3: "Youtube ke mp3",
+    downSpan: "Unduh",
+    headline: "Video Berkualitas Tinggi Dari YouTube",
+  },
+  ja: {
+    nav1: "ユーチューブのダウンローダ",
+    nav2: "ユーチューブコンバータ",
+    nav3: "YoutubeからMP3へ",
+    downSpan: "ダウンロード",
+    headline: "YouTube からの高品質ビデオ",
+  },
+  ko: {
+    nav1: "유튜브 다운로더",
+    nav2: "유튜브 변환기",
+    nav3: "유튜브에서 MP3로",
+    downSpan: "다운로드",
+    headline: "YouTube의 고품질 비디오",
+  },
+  ma: {
+    nav1: "Youtube Downloader",
+    nav2: "Youtube Converter",
+    nav3: "Youtube ke MP3",
+    downSpan: "Muat turun",
+    headline: "Video Berkualiti Tinggi Daripada YouTube",
+  },
+  fi: {
+    nav1: "Youtube Downloader",
+    nav2: "Youtube Converter",
+    nav3: "Youtube sa MP3",
+    downSpan: "I-download",
+    headline: "De-kalidad na mga video Mula sa YouTube",
+  },
+  po: {
+    nav1: "Baixador do YouTube",
+    nav2: "Conversor do YouTube",
+    nav3: "Youtube para mp3",
+    downSpan: "Download",
+    headline: "Vídeos de alta qualidade do YouTube",
+  },
+  ru: {
+    nav1: "Загрузчик YouTube",
+    nav2: "Ютуб конвертер",
+    nav3: "YouTube в mp3",
+    downSpan: "Скачать",
+    headline: "Качественные видео с YouTube",
+  },
+  th: {
+    nav1: "โปรแกรมดาวน์โหลดยูทูป",
+    nav2: "โปรแกรมแปลงยูทูป",
+    nav3: "ยูทูปเป็น MP3",
+    downSpan: "ดาวน์โหลด",
+    headline: "วิดีโอคุณภาพสูงจาก ยูทูบ",
+  },
+  tur: {
+    nav1: "Youtube indirici",
+    nav2: "Youtube çevirici",
+    nav3: "Youtube 'dan mp3' e",
+    downSpan: "İndirmek",
+    headline: "YouTube'dan Yüksek Kaliteli videolar",
+  },
+  ar: {
+    nav1: "برنامج تنزيل يوتيوب",
+    nav2: "محول يوتيوب",
+    nav3: "يوتيوب الى mp3",
+    downSpan: "تحميل",
+    headline: "مقاطع فيديو عالية الجودة من اليوتيوب",
+  },
+  vi: {
+    nav1: "Trình tải xuống Youtube",
+    nav2: "Trình chuyển đổi Youtube",
+    nav3: "Youtube sang MP3",
+    downSpan: "Tải xuống",
+    headline: "Video chất lượng cao từ YouTube",
+  },
+};
+
+function switchLanguage(selectedLanguage) {
+  localStorage.setItem("preferredLanguage", selectedLanguage);
+  updateLanguage(selectedLanguage);
+}
+
+function updateLanguage(selectedLanguage) {
+  const storedLanguage = selectedLanguage ?? "en";
+  // console.log(
+  //   (document.querySelector(
+  //     ".converter-download"
+  //   ).innerHTML = `youtube converter - YouTube to MP3, MP4, AVI, FLV, ...`)
+  // );
+
+  if (translations[storedLanguage]) {
+    document.querySelector(".nav1").innerText =
+      translations[storedLanguage].nav1;
+    document.querySelector(".nav2").innerText =
+      translations[storedLanguage].nav2;
+    document.querySelector(".nav3").innerText =
+      translations[storedLanguage].nav3;
+    document.querySelector(".download-span").innerText =
+      translations[storedLanguage].downSpan;
+    document.querySelector(".down-head").innerText =
+      translations[storedLanguage].headline;
+    document.querySelector(".yConverter").innerText =
+      translations[storedLanguage].yConverter;
+    document.querySelector(".converterHead").innerText =
+      translations[storedLanguage].converterHead;
+    // document.querySelector(".converter-download").innerText =
+    //   translations[storedLanguage].yConverter;
+    document.querySelector(".languageSelect").value = storedLanguage;
+  }
+}
+document
+  .querySelector(".languageSelect")
+  .addEventListener("change", function () {
+    switchLanguage(this.value);
+  });
+function updateActiveClass() {
+  const currentUrl = window.location.href;
+  const originUrl = window.location.origin + "/index.html";
+
+  document.querySelectorAll(".nav-link").forEach((nav, index) => {
+    nav.classList.remove("active");
+
+    if (
+      (currentUrl === window.location.origin + "/" ||
+        currentUrl === originUrl) &&
+      index === 0
+    ) {
+      nav.classList.add("active");
+    } else if (nav.pathname === window.location.pathname) {
+      nav.classList.add("active");
+    }
+  });
+}
+document.addEventListener("DOMContentLoaded", (event) => {
+  var selectElement = document.querySelector(".languageSelect");
+  var defaultValue = localStorage.getItem("selectedLanguage") || "en";
+  selectElement.value = defaultValue;
+
+  var options = selectElement.options;
+  for (var i = 0; i < options.length; i++) {
+    options[i].selected = options[i].value === defaultValue;
+  }
+
+  updateActiveClass();
+
+  selectElement.addEventListener("change", function () {
+    var selectedValue = selectElement.value;
+    localStorage.setItem("selectedLanguage", selectedValue);
+  });
+});
+
+window.addEventListener("popstate", updateActiveClass);
+
+let storeVal = localStorage.getItem("preferredLanguage");
+console.log(storeVal);
+
+window.onload = function () {
+  updateLanguage(storeVal);
+  updateActiveClass();
+};
+// document.querySelectorAll(".nav-link").forEach(function (link) {
+//   link.addEventListener("click", function (event) {
+//     let selectedLanguage = document.querySelector(".languageSelect").value;
+//     // switchLanguage(selectedLanguage);
+//   });
+// });
+
+// function switchLanguage() {
+//   let selectedLanguage = document.querySelector(".languageSelect").value;
+//   localStorage.setItem("preferredLanguage", selectedLanguage);
+//   console.log(localStorage);
+//   document.querySelector(".nav1").innerText =
+//     translations[selectedLanguage].nav1;
+//   document.querySelector(".nav2").innerText =
+//     translations[selectedLanguage].nav2;
+//   document.querySelector(".nav3").innerText =
+//     translations[selectedLanguage].nav3;
+// }
 
 const input = document.querySelector("input");
 const downloadBtn = document.querySelector(".download-btn");
