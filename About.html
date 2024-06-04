@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
     <script src=" https://cdn.tailwindcss.com/3.4.3"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,6 +46,7 @@
         };
     </script>
 
+    <title>About</title>
 </head>
 
 <body>
@@ -79,43 +78,16 @@
                     <div id="navbarNav">
                         <div class="flex gap-[40px] items-center justify-center screen991:!flex-col">
                             <div class="header-links-left flex gap-[16px] screen991:!flex-col">
-                                <!-- <a href="index.html" class="nav-link active nav1">Youtube Downloader</a>
+                                <a href="index.html" class="nav-link nav1">Youtube Downloader</a>
                                 <a href="ytube-converter.html" class="nav-link nav2">Youtube Converter</a>
-                                <a href="ytube-to-mp3.html" class="nav-link nav3">Youtube to MP3</a> -->
+                                <a href="ytube-to-mp3.html" class="nav-link nav3">Youtube to MP3</a>
                             </div>
 
-                            <!-- <div class="drop-down">
-                            <div class="wrapper">
-                                <img src="./assets/images/english.png" alt="" class="selectedImg">
-                                <div class="selected">English</div>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                fill="none">
-                                <path
-                                    d="M11.5843 6.00003L8.46248 9.12185C8.0938 9.49054 7.4905 9.49054 7.12182 9.12185L4 6.00003"
-                                    stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-
-                            <div class="list">
-                                <div class="item">
-                                    <img src="./assets/images/indian.png" alt="">
-                                    <div class="text">Hindi</div>
-                                </div>
-
-                            </div>
-                        </div> -->
-                            <div class="languageSwitcher">
-
-                            </div>
-
-                            <!-- <div id="languageSwitcher">
-                                <select class="language-select" id="languageSelect" onchange="switchLanguage()">
+                            <div id="languageSwitcher">
+                                <select class="language-select" id="languageSelect">
                                     <option value="en">English</option>
-                                    <option value="fi">Finnish</option>
-                                    <option value="hi">Hindi</option>
                                 </select>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -124,48 +96,60 @@
 
     </header>
 
-    <section class="download-sec ">
+    <section class="about-sec ">
         <div class="container mx-auto">
-            <div class="star">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                    <path
-                        d="M20 0L22.3607 12.7346L31.7557 3.81966L26.1803 15.5097L39.0211 13.8197L27.6393 20L39.0211 26.1803L26.1803 24.4903L31.7557 36.1803L22.3607 27.2654L20 40L17.6393 27.2654L8.2443 36.1803L13.8197 24.4903L0.97887 26.1803L12.3607 20L0.97887 13.8197L13.8197 15.5097L8.2443 3.81966L17.6393 12.7346L20 0Z"
-                        fill="#FFD14C" />
-                </svg>
-            </div>
-            <div class="download hero-download"></div>
-            <div class="download-link pb-[104px]">
-                <div class="down-input">
-                    <input type="text" placeholder="Paste video link here..." class="input-placeholder">
-                    <button class="download-btn opacity-50" type="button" id="down-btn" disabled>
-                        Start
-                    </button>
-                </div>
-                <div class="mt-[15px] term-hero">
-                    <!-- <p class="text term-text">By using our service You are accepting our
-                        <span class="terms-span">Terms of Use</span>
-                    </p> -->
-                </div>
-                <div id="loading" class="hidden"></div>
-                <p id="error-msg"></p>
-                <div id="video-file" class="grid grid-cols-2 hidden">
-                </div>
-            </div>
-            <div class="common-content"></div>
 
+            <p>
+                About Us
+                <br>
+                <br>
+                Ytube2d YouTube Downloader is your go-to tool for downloading HD videos for free. With it, you can
+                access
+                and download a
+                vast library of videos and music from numerous websites like YouTube, Facebook, and Instagram. It's easy
+                to use, fast,
+                and lightweight, making Ytube2d YouTube Downloader the perfect choice for all your video downloading
+                needs! Thanks for
+                using Ytube2d.
+            </p>
+        </div>
     </section>
 
     <footer class="footer-sec">
-        <!-- <div class="flex flex-col gap-[16px] screen575:!w-full screen575:!items-center">
-            <a href="#">Instagram Downloader</a>
-            <a href="#">TikTok Downloader</a>
-            <a href="#">Facebook video Downloader</a>
-            <a href="#">Twitter video downloader</a>
-        </div> -->
+        <div class="container mx-auto">
+            <div class="flex flex-col gap-[32px] ">
+                <a href="#" class="footer-img flex items-start screen575:!justify-center">
+                    <img src="assets/images/footer-logo.svg" alt="">
+                </a>
+                <div
+                    class="flex justify-center gap-[70px] screen575:!flex-wrap screen575:!items-center screen575:!gap-[16px]">
+                    <div class="flex flex-col gap-[16px] screen575:!w-full screen575:!items-center">
+                        <a href="index.html" class="footer-downloader">Youtube Downloader</a>
+                        <a href="ytube-converter.html" class="footer-converter">Youtube Converter</a>
+                        <a href="ytube-to-mp3.html" class="footer-mp">Youtube to MP3</a>
+                    </div>
+                    <div
+                        class="flex flex-col gap-[16px] pl-[50px] screen575:!w-full screen575:!items-center screen767:!pl-[0px]">
+                        <a href="About.html" class="footer-about">About</a>
+                        <a href="FAQ.html" class="footer-faq">FAQ</a>
+                        <a href="contact.html" class="footer-contact">Contact</a>
+                        <a href="service.html" class="footer-service">Terms of Service</a>
+                        <a href="privacy.html" class="footer-privacy">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="horizontal-line"></div>
+            </div>
+            <div class="pt-[20px] pb-[20px] flex gap-[4px] justify-center">
+                <span class="footer-com">Design and Develop By </span>
+                <span>
+                    <a href="https://www.delemontstudio.com/" class="footer-com underline">Delemont Studio</a>
+                </span>
+            </div>
+        </div>
     </footer>
 
 
-    <script src="./assets/js/custom.js"></script>
+
 
 </body>
 

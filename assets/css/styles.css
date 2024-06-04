@@ -943,6 +943,11 @@ p.title {
 #Audio-btn:disabled {
   cursor: not-allowed;
 }
+.about-sec {
+  margin-top: 100px;
+  /* height: 45vh; */
+}
+
 /* #video-file {
   display: none;
 }

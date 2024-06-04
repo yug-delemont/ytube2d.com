@@ -325,6 +325,15 @@
   .youtube h1 {
     font-size: 38px !important;
   }
+  div#video-file {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  p.title {
+    text-align: center !important;
+  }
 }
 
 @media only screen and (max-width: 575px) {
