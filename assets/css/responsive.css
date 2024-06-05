@@ -11,9 +11,6 @@
 }
 
 @media only screen and (max-width: 1429px) {
-  /* .container {
-    max-width: 991px !important;
-  } */
 }
 
 @media only screen and (max-width: 1199px) {
@@ -30,9 +27,6 @@
     max-width: 390px;
   }
 
-  /**********  Responsive Menu Bootstrap **********/
-
-  /**  menu  **/
   .toggler {
     width: 50px;
     height: 50px;
@@ -112,7 +106,7 @@
   #navbarNav {
     background: #ffffff url(../images/banner-img.png) no-repeat bottom right /
       auto 170px;
-    /* box-shadow: 0 0px 0 10px #fff inset, 0 0 0 11px #7bc00b inset; */
+
     padding: 60px 20px 15px;
     position: fixed;
     top: 0;
@@ -188,13 +182,12 @@
     border-radius: 0;
   }
 
-  /* Common Css must add */
   .navbar-toggler svg {
     height: 40px;
     position: absolute;
     width: 40px;
     cursor: pointer;
-    /*   border: 1px solid black; */
+
     background-color: #fff;
   }
 
@@ -227,9 +220,6 @@
     stroke-width: 5.5px;
   }
 
-  /* Common Css must add end */
-
-  /* Forth Menu Css */
   .plate4 .x {
     transition: transform 400ms;
   }
@@ -311,10 +301,15 @@
   a.nav-link.active::after {
     border-bottom: none !important;
   }
-
-  /**  Menu  **/
-
-  /**********  Responsive Menu  **********/
+  div#video-file {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  p.title {
+    text-align: center !important;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -353,6 +348,15 @@
     padding-left: 14px !important;
     height: 60px !important;
   }
+  .res-image {
+    width: 300px !important;
+    height: 200px !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  p.title {
+    max-width: 300px !important ;
+  }
 }
 
 @media only screen and (max-width: 479px) {
@@ -366,4 +370,16 @@
 }
 
 @media only screen and (max-width: 349px) {
+}
+
+@media only screen and (max-width: 280px) {
+  .res-image {
+    width: 200px !important;
+    height: 180px !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  p.title {
+    max-width: 200px !important ;
+  }
 }

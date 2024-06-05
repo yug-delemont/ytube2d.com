@@ -4,6 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ytube2d.com - ytube2d YouTube converter & downloader</title>
+    <meta name="description"
+        content="Online download videos from YouTube for FREE to PC, mobile. Supports downloading all formats: MP4, 3GP, WebM, HD videos, convert YouTube to MP3, M4A">
+    <meta name="keywords"
+        content="YouTube downloader, YouTube converter, video download, MP3 converter, video converter">
+    <meta property="og:title" content="ytube2d.com About - ytube2d YouTube converter & downloader">
+    <meta property="og:description"
+        content="Online download videos from YouTube for FREE to PC, mobile. Supports downloading all formats: MP4, 3GP, WebM, HD videos, convert YouTube to MP3, M4A">
+    <meta property="og:url" content="https://ytube2d.com/about">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/images/ytube-logo.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="About ytube2d.com - ytube2d YouTube converter & downloader">
+    <meta name="twitter:description"
+        content="Online download videos from YouTube for FREE to PC, mobile. Supports downloading all formats: MP4, 3GP, WebM, HD videos, convert YouTube to MP3, M4A">
+    <meta name="twitter:image" content="./assets/images/ytube-logo.png">
+    <link rel="canonical" href="https://ytube2d.com">
+    <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon">
+
     <script src=" https://cdn.tailwindcss.com/3.4.3"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +42,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
     <script>
@@ -78,13 +98,11 @@
                     <div id="navbarNav">
                         <div class="flex gap-[40px] items-center justify-center screen991:!flex-col">
                             <div class="header-links-left flex gap-[16px] screen991:!flex-col">
-                                <a href="index.html" class="nav-link nav1">Youtube Downloader</a>
-                                <a href="ytube-converter.html" class="nav-link nav2">Youtube Converter</a>
-                                <a href="ytube-to-mp3.html" class="nav-link nav3">Youtube to MP3</a>
                             </div>
-
-                            <div id="languageSwitcher">
-                                <select class="language-select" id="languageSelect">
+                            <div class="languageSwitcher hidden">
+                            </div>
+                            <div id="languageSwitcher1">
+                                <select class="language-select" id="languageSelect" onchange="switchLanguage()">
                                     <option value="en">English</option>
                                 </select>
                             </div>
@@ -96,22 +114,23 @@
 
     </header>
 
-    <section class="about-sec ">
+    <section class="about-sec">
         <div class="container mx-auto">
-
-            <p>
-                About Us
+            <div class="p-[10px] min-h-[400px]">
+                <h1>About Us</h1>
                 <br>
-                <br>
-                Ytube2d YouTube Downloader is your go-to tool for downloading HD videos for free. With it, you can
-                access
-                and download a
-                vast library of videos and music from numerous websites like YouTube, Facebook, and Instagram. It's easy
-                to use, fast,
-                and lightweight, making Ytube2d YouTube Downloader the perfect choice for all your video downloading
-                needs! Thanks for
-                using Ytube2d.
-            </p>
+                <p>
+                    Ytube2d YouTube Downloader is your go-to tool for downloading HD videos for free. With it, you can
+                    access
+                    and download a
+                    vast library of videos and music from numerous websites like YouTube, Facebook, and Instagram. It's
+                    easy
+                    to use, fast,
+                    and lightweight, making Ytube2d YouTube Downloader the perfect choice for all your video downloading
+                    needs! Thanks for
+                    using Ytube2d.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -142,13 +161,14 @@
             <div class="pt-[20px] pb-[20px] flex gap-[4px] justify-center">
                 <span class="footer-com">Design and Develop By </span>
                 <span>
-                    <a href="https://www.delemontstudio.com/" class="footer-com underline">Delemont Studio</a>
+                    <a href="https://www.delemontstudio.com/" class="footer-com underline" target="_blank">Delemont
+                        Studio</a>
                 </span>
             </div>
         </div>
     </footer>
 
-
+    <script src="./assets/js/custom.js"></script>
 
 
 </body>

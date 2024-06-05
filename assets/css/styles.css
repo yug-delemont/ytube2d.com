@@ -1,5 +1,3 @@
-/*********************  Default-CSS  *********************/
-
 input[type="file"]::-webkit-file-upload-button {
   cursor: pointer;
 }
@@ -71,27 +69,6 @@ html body {
   margin: 0;
   line-height: 1.3;
 }
-
-/* a,
-div a:hover,
-div a:active,
-div a:focus,
-button {
-  text-decoration: none;
-  -webkit-transition: all 0.5s ease 0s;
-  -moz-transition: all 0.5s ease 0s;
-  -ms-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
-}
-
-a,
-span,
-div a:hover,
-div a:active,
-button {
-  text-decoration: none;
-} */
 
 *::after,
 *::before,
@@ -268,7 +245,6 @@ header {
   box-shadow: 0px 4px 24px 0px rgba(82, 4, 4, 0.05);
   height: 88px;
 }
-/*********************  scroll Hide  *********************/
 
 html.show-menu {
   overflow: hidden;
@@ -279,20 +255,10 @@ html.show-menu body {
   height: 100%;
 }
 
-/*********************  Default-CSS close  *********************/
-
-/*********************  Gapping  *********************/
-
 section {
   padding-bottom: 60px;
   padding-top: 60px;
 }
-
-/*********************  Gapping close  *********************/
-
-/*********************  Default-CSS  *********************/
-
-/*********************  Common-Css  *******************/
 
 .clr:after,
 ul:after,
@@ -312,10 +278,6 @@ li:after,
 .form-control:focus {
   box-shadow: none !important;
 }
-
-/*********************  Common-Css Close  *******************/
-
-/*********************  Header  *******************/
 
 a.nav-link {
   color: var(--Gray-Sahde-7, #5e5757);
@@ -446,7 +408,6 @@ header.fixed .navbar {
   padding: 15px 0px;
 }
 
-/*********************  Header Close  *******************/
 a.btnblack:hover {
   background: transparent;
   color: black;
@@ -466,15 +427,6 @@ section.herosection {
   background: rgb(255, 255, 255);
 }
 
-/*********************  Home banner  *******************/
-
-/*********************  Home banner Close  *******************/
-
-/*********************  Content  *******************/
-
-/*********************  Content Close  *******************/
-
-/*********************  Footer  *******************/
 ul.social {
   display: flex;
   align-items: center;
@@ -561,31 +513,13 @@ footer {
   width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
-
-/*********************  Footer Close  *******************/
-
-/*********************  Inner-Pages  *******************/
-
-/*********************  Inner-Pages Close  *******************/
-
-/*********************  Owl  *******************/
-
-/*********************  Owl Close  *******************/
-
-/*********************  Fancy-box  *******************/
-
-/*********************  Fancy-box Close  *******************/
-
-/* language picker */
 
 .drop-down {
   position: relative;
@@ -596,7 +530,6 @@ footer {
   background: var(--Natural-Black, #000);
   cursor: pointer;
   padding: 0.5rem 1rem;
-  /* height: 36px; */
   color: white;
 }
 .wrapper {
@@ -626,7 +559,6 @@ footer {
   width: 28px;
   height: 28px;
 }
-/*********************  download section  *******************/
 
 .download h1 {
   color: var(--Natural-Black, #000);
@@ -689,7 +621,7 @@ footer {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
   letter-spacing: -0.16px;
   width: 120px !important;
 }
@@ -702,7 +634,7 @@ footer {
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 133.333% */
+  line-height: 24px;
   letter-spacing: -0.54px;
 }
 .download-link .text {
@@ -711,7 +643,7 @@ footer {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 22px; /* 157.143% */
+  line-height: 22px;
   letter-spacing: -0.14px;
   text-align: center;
 }
@@ -739,7 +671,7 @@ footer {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 22px; /* 157.143% */
+  line-height: 22px;
   letter-spacing: -0.14px;
   padding-top: 16px;
   max-width: 830px;
@@ -763,7 +695,7 @@ footer {
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
-  line-height: 32px; /* 133.333% */
+  line-height: 32px;
   letter-spacing: -0.24px;
 }
 .instruction-card p {
@@ -773,7 +705,7 @@ footer {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 22px; /* 157.143% */
+  line-height: 22px;
   letter-spacing: -0.14px;
 }
 .vertical-line {
@@ -798,7 +730,7 @@ footer a {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
   letter-spacing: -0.16px;
 }
 .horizontal-line {
@@ -820,15 +752,13 @@ footer a {
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 200% */
+  line-height: 24px;
   letter-spacing: -0.12px;
   opacity: 0.3;
   display: flex;
   justify-content: center;
   cursor: pointer;
 }
-
-/* loader */
 
 #loading {
   width: 2rem;
@@ -849,7 +779,6 @@ footer a {
     transform: rotate(360deg);
   }
 }
-/* loader-end */
 
 #error-msg {
   text-align: center;
@@ -875,7 +804,7 @@ footer a {
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
-  line-height: 32px; /* 133.333% */
+  line-height: 32px;
   letter-spacing: -0.24px;
   padding: 16px 0px 16px 0px;
 }
@@ -945,12 +874,4 @@ p.title {
 }
 .about-sec {
   margin-top: 100px;
-  /* height: 45vh; */
 }
-
-/* #video-file {
-  display: none;
-}
-#video-file.show {
-  display: block;
-} */

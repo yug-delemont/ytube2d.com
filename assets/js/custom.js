@@ -1,55 +1,3 @@
-/*var wid = $(window).width(),
-hei = $(window).height();
-alert("width:" + wid +"px and height: " + hei + "px.")
-*/
-
-// $(document).ready(function () {
-//   $(".navbar-toggler").click(function () {
-//     $("html").toggleClass("show-menu");
-//   });
-
-//   function scrolling() {
-//     var sticky = $("header"),
-//       scroll = $(window).scrollTop();
-
-//     if (scroll >= 15) sticky.addClass("fixed");
-//     else sticky.removeClass("fixed");
-//   }
-//   scrolling();
-//   $(window).scroll(scrolling);
-
-//   // hide #back-top first
-//   $("#myBtn").hide();
-
-//   // fade in #back-top
-//   $(function () {
-//     $(window).scroll(function () {
-//       if ($(this).scrollTop() > 100) {
-//         $("#myBtn").fadeIn();
-//       } else {
-//         $("#myBtn").fadeOut();
-//       }
-//     });
-
-//     // scroll body to 0px on click
-//     $("#myBtn").click(function () {
-//       $("body,html").animate(
-//         {
-//           scrollTop: 0,
-//         },
-//         1000
-//       );
-//       return false;
-//     });
-//   });
-// });
-
-// //cursor
-
-// $(".menu").click(function () {
-//   $(this).toggleClass("open");
-// });
-
 document.querySelector("#nav-btn").addEventListener("click", function () {
   document.querySelector("html").classList.toggle("show-menu");
 });
@@ -102,7 +50,7 @@ let MP3Heading = `
 `;
 let termsTemplate = `
  <p class="text term-text">By using our service You are accepting our
-                        <span class="terms-span">Terms of Use</span>
+                        <span class="terms-span"> <a href="service.html" class="pointer">Terms of Use</a></span>
                     </p>
 `;
 let CommonContent = `
@@ -176,13 +124,11 @@ const footerContentTemplate = `
     <div class="pt-[20px] pb-[20px] flex gap-[4px] justify-center">
       <span class="footer-com">Design and Develop By </span>
       <span>
-        <a href="https://www.delemontstudio.com/" class="footer-com underline">Delemont Studio</a>
+        <a href="https://www.delemontstudio.com/" class="footer-com underline" target="_blank">Delemont Studio</a>
       </span>
     </div>
   </div>
 `;
-
-// languages
 
 let translations = {
   de: {
@@ -868,167 +814,6 @@ Không cần đăng ký Hỗ trợ tải xuống với mọi định dạng Tả
   },
 };
 
-// function switchLanguage(selectedLanguage) {
-//   localStorage.setItem("preferredLanguage", selectedLanguage);
-//   updateLanguage(selectedLanguage);
-// }
-
-// function updateLanguage(selectedLanguage) {
-//   const storedLanguage = selectedLanguage ?? "en";
-//   // console.log(
-//   //   (document.querySelector(
-//   //     ".converter-download"
-//   //   ).innerHTML = `youtube converter - YouTube to MP3, MP4, AVI, FLV, ...`)
-//   // );
-
-//   if (translations[storedLanguage]) {
-//     document.querySelector(".nav1").innerText =
-//       translations[storedLanguage].nav1;
-//     document.querySelector(".nav2").innerText =
-//       translations[storedLanguage].nav2;
-//     document.querySelector(".nav3").innerText =
-//       translations[storedLanguage].nav3;
-
-//     document.querySelector(".download-span").innerText =
-//       translations[storedLanguage].downSpan;
-//     document.querySelector(".down-head").innerText =
-//       translations[storedLanguage].headline;
-//     document.querySelector(".input-placeholder").placeholder =
-//       translations[storedLanguage].inputPlaceholder;
-//     document.querySelector(".download-btn").innerText =
-//       translations[storedLanguage].downloadBtn;
-//     document.querySelector(".description").innerText =
-//       translations[storedLanguage].descriptions;
-//     const textElement = document.querySelector(".youtubeText");
-//     const termsSpan = document.querySelector(".ytube-down");
-//     textElement.innerHTML = `
-//     ${translations[storedLanguage].youtubeText} <span class="ytube-down">${translations[storedLanguage].youtubeSpan}</span>`;
-//     document.querySelector(".instruction-head").innerText =
-//       translations[storedLanguage].instructionHead;
-//     document.querySelector(".instruction-text").innerText =
-//       translations[storedLanguage].instructionText;
-//     document.querySelector(".why-head").innerText =
-//       translations[storedLanguage].whyHead;
-//     document.querySelector(".why-text").innerText =
-//       translations[storedLanguage].whyText;
-//     document.querySelector(".features-head").innerText =
-//       translations[storedLanguage].featuresHead;
-//     document.querySelector(".features-text").innerText =
-//       translations[storedLanguage].featuresText;
-//     document.querySelector(".free-head").innerText =
-//       translations[storedLanguage].freeHead;
-//     document.querySelector(".free-text").innerText =
-//       translations[storedLanguage].freeText;
-//     document.querySelector(".video-head").innerText =
-//       translations[storedLanguage].videoHead;
-//     document.querySelector(".video-text").innerText =
-//       translations[storedLanguage].videoText;
-//     document.querySelector(".easy-head").innerText =
-//       translations[storedLanguage].easyHead;
-//     document.querySelector(".easy-text").innerText =
-//       translations[storedLanguage].easyText;
-//     document.querySelector(".footer-downloader").innerText =
-//       translations[storedLanguage].footerDownload;
-//     document.querySelector(".footer-converter").innerText =
-//       translations[storedLanguage].footerConverter;
-//     document.querySelector(".footer-mp").innerText =
-//       translations[storedLanguage].footerMp;
-//     document.querySelector(".footer-about").innerText =
-//       translations[storedLanguage].footerAbout;
-//     document.querySelector(".footer-faq").innerText =
-//       translations[storedLanguage].footerFaq;
-//     document.querySelector(".footer-contact").innerText =
-//       translations[storedLanguage].footerContact;
-//     document.querySelector(".footer-service").innerText =
-//       translations[storedLanguage].footerService;
-//     document.querySelector(".footer-privacy").innerText =
-//       translations[storedLanguage].footerPrivacy;
-//     // const textElement = document.querySelector(".text");
-//     // const termsSpan = document.querySelector(".terms-span");
-//     // textElement.innerHTML = `
-//     // ${translations[storedLanguage].termsText} <span class="terms-span">${translations[storedLanguage].termsSpan}</span>`;
-
-//     // document.querySelector(".yConverter").innerText =
-//     //   translations[storedLanguage].yConverter;
-//     // document.querySelector(".converterHead").innerText =
-//     //   translations[storedLanguage].converterHead;
-//     // document.querySelector(".converter-download").innerText =
-//     //   translations[storedLanguage].yConverter;
-//     document.querySelector(".languageSelect").value = storedLanguage;
-//   }
-// }
-// document
-//   .querySelector(".languageSelect")
-//   .addEventListener("change", function () {
-//     switchLanguage(this.value);
-//   });
-// function updateActiveClass() {
-//   const currentUrl = window.location.href;
-//   const originUrl = window.location.origin + "/index.html";
-
-//   document.querySelectorAll(".nav-link").forEach((nav, index) => {
-//     nav.classList.remove("active");
-
-//     if (
-//       (currentUrl === window.location.origin + "/" ||
-//         currentUrl === originUrl) &&
-//       index === 0
-//     ) {
-//       nav.classList.add("active");
-//     } else if (nav.pathname === window.location.pathname) {
-//       nav.classList.add("active");
-//     }
-//   });
-// }
-
-// // document.addEventListener("DOMContentLoaded", (event) => {
-// //   var selectElement = document.querySelector(".languageSelect");
-// //   var defaultValue = localStorage.getItem("selectedLanguage") || "en";
-// //   selectElement.value = defaultValue;
-
-// //   var options = selectElement.options;
-// //   for (var i = 0; i < options.length; i++) {
-// //     options[i].selected = options[i].value === defaultValue;
-// //   }
-
-// //   updateActiveClass();
-
-// //   selectElement.addEventListener("change", function () {
-// //     var selectedValue = selectElement.value;
-// //     localStorage.setItem("selectedLanguage", selectedValue);
-// //   });
-// // });
-
-// // window.addEventListener("popstate", updateActiveClass);
-
-// // let storeVal = localStorage.getItem("preferredLanguage");
-// // console.log(storeVal);
-
-// // window.onload = function () {
-// //   updateLanguage(storeVal);
-// //   updateActiveClass();
-// // };
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   var selectElement = document.querySelector(".languageSelect");
-//   var defaultValue = localStorage.getItem("preferredLanguage") || "en";
-//   selectElement.value = defaultValue;
-
-//   var options = selectElement.options;
-//   for (var i = 0; i < options.length; i++) {
-//     options[i].selected = options[i].value === defaultValue;
-//   }
-
-//   updateActiveClass();
-//   updateLanguage(defaultValue);
-//   // selectElement.addEventListener("change", function () {
-//   //   switchLanguage(this.value);
-//   // });
-// });
-// document.querySelector(".hero-download").innerHTML = downloadHeading;
-// document.querySelector(".common-content").innerHTML = CommonContent;
-// document.querySelector(".footer-sec").innerHTML = footerContent;
-
 function switchLanguage(selectedLanguage) {
   localStorage.setItem("preferredLanguage", selectedLanguage);
   updateLanguage(selectedLanguage);
@@ -1206,7 +991,6 @@ document.addEventListener("DOMContentLoaded", () => {
     selectElement.value = defaultValue;
     selectElement.addEventListener("change", function () {
       switchLanguage(this.value);
-      // Reload the page to apply the language change
       location.reload();
     });
   }
@@ -1232,7 +1016,6 @@ input.addEventListener("input", updateValue);
 
 async function updateValue(e) {
   loader.classList.remove("hidden");
-  // loader.classList.add("block");
   let url = e.target.value;
   let dataInfo = {
     url: url,
@@ -1241,7 +1024,6 @@ async function updateValue(e) {
   let regex = /^(ftp|http|https):\/\/[^ "]+$/;
   if (regex.test(url)) {
     try {
-      // displayLoading();
       const response = await fetch("http://localhost:3000/api/data-info", {
         method: "POST",
         headers: {
@@ -1249,14 +1031,14 @@ async function updateValue(e) {
         },
         body: JSON.stringify(dataInfo),
       });
-      // loader ? displayLoading() : dataInfo ? showData() : hideLoading();
+
       const result = await response.json();
       console.log("Success:", result);
       if (result.success === true) {
         loader.classList.add("hidden");
 
         div1.innerHTML = `
-        <iframe src=${result.info.videoDetails.embed.iframeUrl} width="464px"  height="259.595px">
+        <iframe src=${result.info.videoDetails.embed.iframeUrl} width="464px"  height="259.595px" class="res-image">
         </iframe>
         <p class="title">${result.info.videoDetails.title}</p>`;
 
@@ -1311,7 +1093,12 @@ async function updateValue(e) {
               if (format.audioBitrate != null) {
                 audioFormats.push(format);
               } else {
-                noAudioFormats.push(format);
+                const exists = noAudioFormats.some(
+                  (item) => item.qualityLabel === format.qualityLabel
+                );
+                if (!exists) {
+                  noAudioFormats.push(format);
+                }
               }
             });
         });
@@ -1373,10 +1160,8 @@ async function updateValue(e) {
         let noAudioHtml = generateHtml(noAudioFormats);
         let quality_Label = audioHtml + noAudioHtml;
 
-        //audio
         let uniqueAudioFormats = fetchData[0].filter(
           (format) => format.audioCodec != "opus" && format.qualityLabel == null
-          // format.codecs != "avc1.64001F, mp4a.40.2"
         );
 
         let audioUrl = uniqueAudioFormats[0].url;
@@ -1407,12 +1192,8 @@ async function updateValue(e) {
         AudioQuality.innerHTML = audioQualityHTML;
         videoFile.classList.remove("hidden");
       }
-      // hideLoading();
-      // videoFile.classList.add("show");
     } catch (error) {
       console.error("Error:", error);
-      // hideLoading();
-
       errorMsg.textContent = "error!";
     }
     downloadBtn.disabled = false;
@@ -1425,156 +1206,14 @@ async function updateValue(e) {
   }
 }
 
-// async function videoDownload(button, url, qualityLabel, videoContainer, title) {
-//   console.log(videoContainer);
-//   console.log(url);
-//   const downloadText = button.querySelector(".video-download");
-//   button.disabled = true;
-//   const originalText = downloadText.textContent;
-//   downloadText.textContent = "downloading...";
-//   try {
-//     console.log(url);
-//     const response = await fetch(url);
-//     if (!response.ok)
-//       throw new Error(`Network response was not ok: ${response.statusText}`);
-//     const blob = await response.blob();
-//     const urlObject = window.URL.createObjectURL(blob);
-//     const a = document.createElement("a");
-//     a.href = urlObject;
-//     a.download = `video_${title}${videoContainer}`;
-//     a.style.display = "none";
-//     document.body.appendChild(a);
-//     a.click();
-//     window.URL.revokeObjectURL(urlObject);
-//     document.body.removeChild(a);
-//   } catch (error) {
-//     console.error("Error downloading video:", error);
-//     alert("Error downloading video. Please try again.");
-//   } finally {
-//     button.disabled = false;
-//     downloadText.textContent = originalText;
-//   }
-// }
-
-// async function videoDownload(button, url, qualityLabel, videoContainer, title) {
-//   const proxyUrl = "https://cors-anywhere.herokuapp.com/"; // Proxy server URL
-//   const proxiedUrl = `${proxyUrl}${url}`; // Construct the proxied URL
-//   const downloadText = button.querySelector(".video-download");
-//   button.disabled = true;
-//   const originalText = downloadText.textContent;
-//   downloadText.textContent = "downloading...";
-//   try {
-//     const response = await fetch(proxiedUrl); // Use the proxied URL
-//     if (!response.ok)
-//       throw new Error(`Network response was not ok: ${response.statusText}`);
-//     const blob = await response.blob();
-//     const urlObject = window.URL.createObjectURL(blob);
-//     const a = document.createElement("a");
-//     a.href = urlObject;
-//     a.download = `video_${title}${videoContainer}`;
-//     a.style.display = "none";
-//     document.body.appendChild(a);
-//     a.click();
-//     window.URL.revokeObjectURL(urlObject);
-//     document.body.removeChild(a);
-//   } catch (error) {
-//     console.error("Error downloading video:", error);
-//     alert("Error downloading video. Please try again.");
-//   } finally {
-//     button.disabled = false;
-//     downloadText.textContent = originalText;
-//   }
-// }
-
-// async function audioDownload(button, url, title, AudioContainer) {
-//   console.log("Audio download initiated for URL:", url);
-//   const downloadText = button.querySelector(".video-download");
-//   button.disabled = true;
-//   const originalText = downloadText.textContent;
-//   downloadText.textContent = "downloading...";
-//   try {
-//     console.log(url);
-//     const response = await fetch(url);
-//     if (!response.ok)
-//       throw new Error(`Network response was not ok: ${response.statusText}`);
-//     const blob = await response.blob();
-//     const urlObject = window.URL.createObjectURL(blob);
-//     const a = document.createElement("a");
-//     a.href = urlObject;
-//     a.download = `audio_${title}${AudioContainer}`;
-//     a.style.display = "none";
-//     document.body.appendChild(a);
-//     a.click();
-//     window.URL.revokeObjectURL(urlObject);
-//     document.body.removeChild(a);
-//   } catch (error) {
-//     console.error("Error downloading audio:", error);
-//     alert("Error downloading audio. Please try again.");
-//   } finally {
-//     button.disabled = false;
-//     downloadText.textContent = originalText;
-//   }
-// }
-
-//Function to fetch resources through the proxy server
 async function fetchThroughProxy(url) {
-  const proxyUrl = "https://cors-anywhere.herokuapp.com/"; // Proxy server URL
-  const proxiedUrl = `${proxyUrl}${url}`; // Construct the proxied URL
+  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  const proxiedUrl = `${proxyUrl}${url}`;
   const response = await fetch(proxiedUrl);
   if (!response.ok)
     throw new Error(`Network response was not ok: ${response.statusText}`);
   return response.blob();
 }
-
-// Function to download video
-// async function videoDownload(button, url, qualityLabel, videoContainer, title) {
-//   const downloadText = button.querySelector(".video-download");
-//   button.disabled = true;
-//   const originalText = downloadText.textContent;
-//   downloadText.textContent = "downloading...";
-//   try {
-//     const blob = await fetchThroughProxy(url);
-//     const urlObject = window.URL.createObjectURL(blob);
-//     const a = document.createElement("a");
-//     a.href = urlObject;
-//     a.download = `video_${title}${videoContainer}`;
-//     a.style.display = "none";
-//     document.body.appendChild(a);
-//     a.click();
-//     window.URL.revokeObjectURL(urlObject);
-//   } catch (error) {
-//     console.error("Error downloading video:", error);
-//     alert("Error downloading video. Please try again.");
-//   } finally {
-//     button.disabled = false;
-//     downloadText.textContent = originalText;
-//   }
-// }
-
-// Function to download audio
-// async function audioDownload(button, url, title, AudioContainer) {
-//   const downloadText = button.querySelector(".video-download"); // Update class name
-//   button.disabled = true;
-//   const originalText = downloadText.textContent;
-//   downloadText.textContent = "downloading...";
-//   try {
-//     const blob = await fetchThroughProxy(url);
-//     const urlObject = window.URL.createObjectURL(blob);
-//     const a = document.createElement("a");
-//     a.href = urlObject;
-//     a.download = `audio_${title}${AudioContainer}`;
-//     a.style.display = "none";
-//     document.body.appendChild(a);
-//     a.click();
-//     window.URL.revokeObjectURL(urlObject);
-//   } catch (error) {
-//     console.error("Error downloading audio:", error);
-//     alert("Error downloading audio. Please try again.");
-//   } finally {
-//     button.disabled = false;
-//     downloadText.textContent = originalText;
-//   }
-// }
 
 async function videoDownload(
   button,
@@ -1611,7 +1250,6 @@ async function videoDownload(
   }
 }
 
-// Modified function to download audio
 function audioDownload(button, audioUrl, title, AudioContainer) {
   const link = document.createElement("a");
   link.href = audioUrl;
@@ -1620,42 +1258,3 @@ function audioDownload(button, audioUrl, title, AudioContainer) {
   window.open(link, "_blank");
   document.body.removeChild(link);
 }
-
-// async function downloadMedia(button, url, title, container, isVideo) {
-//   console.log(`Downloading ${isVideo ? "video" : "audio"} for URL:`, url);
-//   const downloadText = button.querySelector(".video-download");
-//   button.disabled = true;
-//   const originalText = downloadText.textContent;
-//   downloadText.textContent = "downloading...";
-//   try {
-//     const response = await fetch(url);
-//     if (!response.ok)
-//       throw new Error(`Network response was not ok: ${response.statusText}`);
-//     const blob = await response.blob();
-//     const urlObject = window.URL.createObjectURL(blob);
-//     const a = document.createElement("a");
-//     a.href = urlObject;
-//     a.download = `${isVideo ? "video" : "audio"}_${title}${container}`;
-//     a.style.display = "none";
-//     document.body.appendChild(a);
-//     a.click();
-//     window.URL.revokeObjectURL(urlObject);
-//     document.body.removeChild(a);
-//   } catch (error) {
-//     console.error(`Error downloading ${isVideo ? "video" : "audio"}:`, error);
-//     alert(
-//       `Error downloading ${isVideo ? "video" : "audio"}. Please try again.`
-//     );
-//   } finally {
-//     button.disabled = false;
-//     downloadText.textContent = originalText;
-//   }
-// }
-
-// async function videoDownload(button, url, qualityLabel, videoContainer, title) {
-//   await downloadMedia(button, url, title, videoContainer, true);
-// }
-
-// async function audioDownload(button, url, title, audioContainer) {
-//   await downloadMedia(button, url, title, audioContainer, false);
-// }

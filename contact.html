@@ -4,6 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact to ytube2d.com - ytube2d YouTube converter & downloader</title>
+    <meta name="description"
+        content="Online download videos from YouTube for FREE to PC, mobile. Supports downloading all formats: MP4, 3GP, WebM, HD videos, convert YouTube to MP3, M4A">
+    <meta name="keywords"
+        content="YouTube downloader, YouTube converter, video download, MP3 converter, video converter">
+    <meta property="og:title" content="ytube2d.com Contact - ytube2d YouTube converter & downloader">
+    <meta property="og:description"
+        content="Online download videos from YouTube for FREE to PC, mobile. Supports downloading all formats: MP4, 3GP, WebM, HD videos, convert YouTube to MP3, M4A">
+    <meta property="og:url" content="https://ytube2d.com/contact">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/images/ytube-logo.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Contact to ytube2d.com - ytube2d YouTube converter & downloader">
+    <meta name="twitter:description"
+        content="Online download videos from YouTube for FREE to PC, mobile. Supports downloading all formats: MP4, 3GP, WebM, HD videos, convert YouTube to MP3, M4A">
+    <meta name="twitter:image" content="./assets/images/ytube-logo.png">
+    <link rel="canonical" href="https://ytube2d.com">
+    <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon">
+
     <script src=" https://cdn.tailwindcss.com/3.4.3"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,8 +64,6 @@
             },
         };
     </script>
-
-    <title>Contact</title>
 </head>
 
 <body>
@@ -78,13 +95,11 @@
                     <div id="navbarNav">
                         <div class="flex gap-[40px] items-center justify-center screen991:!flex-col">
                             <div class="header-links-left flex gap-[16px] screen991:!flex-col">
-                                <a href="index.html" class="nav-link nav1">Youtube Downloader</a>
-                                <a href="ytube-converter.html" class="nav-link nav2">Youtube Converter</a>
-                                <a href="ytube-to-mp3.html" class="nav-link nav3">Youtube to MP3</a>
                             </div>
-
-                            <div id="languageSwitcher">
-                                <select class="language-select" id="languageSelect">
+                            <div class="languageSwitcher hidden">
+                            </div>
+                            <div id="languageSwitcher1">
+                                <select class="language-select" id="languageSelect" onchange="switchLanguage()">
                                     <option value="en">English</option>
                                 </select>
                             </div>
@@ -95,18 +110,20 @@
         </nav>
 
     </header>
-
     <section class="about-sec ">
         <div class="container mx-auto">
+            <div class="min-h-[400px] p-[10px]">
+                <h1>
+                    Contact US
+                </h1>
+                <br>
+                <p>
+                    If you have any questions, complaints, or claims with respect to the our Services, please send us a
+                    message to:
+                    ytubetwod@gmail.com
+                </p>
+            </div>
 
-            <p>
-                Contact US
-                <br>
-                <br>
-                If you have any questions, complaints, or claims with respect to the our Services, please send us a
-                message to:
-                info@delemontstudio.com
-            </p>
         </div>
     </section>
 
@@ -137,13 +154,15 @@
             <div class="pt-[20px] pb-[20px] flex gap-[4px] justify-center">
                 <span class="footer-com">Design and Develop By </span>
                 <span>
-                    <a href="https://www.delemontstudio.com/" class="footer-com underline">Delemont Studio</a>
+                    <a href="https://www.delemontstudio.com/" class="footer-com underline" target="_blank">Delemont
+                        Studio</a>
                 </span>
             </div>
         </div>
     </footer>
 
 
+    <script src="./assets/js/custom.js"></script>
 
 
 </body>

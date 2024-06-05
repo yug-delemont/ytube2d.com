@@ -4,6 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ytube2d.com FAQ - ytube2d YouTube converter & downloader</title>
+    <meta name="description"
+        content="Online download videos from YouTube for FREE to PC, mobile. Supports downloading all formats: MP4, 3GP, WebM, HD videos, convert YouTube to MP3, M4A">
+    <meta name="keywords"
+        content="YouTube downloader, YouTube converter, video download, MP3 converter, video converter">
+    <meta property="og:title" content="ytube2d.com FAQ - ytube2d YouTube converter & downloader">
+    <meta property="og:description"
+        content="Online download videos from YouTube for FREE to PC, mobile. Supports downloading all formats: MP4, 3GP, WebM, HD videos, convert YouTube to MP3, M4A">
+    <meta property="og:url" content="https://ytube2d.com/contact">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/images/ytube-logo.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ytube2d.com FAQ - ytube2d YouTube converter & downloader">
+    <meta name="twitter:description"
+        content="Online download videos from YouTube for FREE to PC, mobile. Supports downloading all formats: MP4, 3GP, WebM, HD videos, convert YouTube to MP3, M4A">
+    <meta name="twitter:image" content="./assets/images/ytube-logo.png">
+    <link rel="canonical" href="https://ytube2d.com">
+    <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon">
+
     <script src=" https://cdn.tailwindcss.com/3.4.3"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +42,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
     <script>
@@ -46,7 +66,7 @@
         };
     </script>
 
-    <title>FAQ</title>
+
 </head>
 
 <body>
@@ -78,13 +98,11 @@
                     <div id="navbarNav">
                         <div class="flex gap-[40px] items-center justify-center screen991:!flex-col">
                             <div class="header-links-left flex gap-[16px] screen991:!flex-col">
-                                <a href="index.html" class="nav-link nav1">Youtube Downloader</a>
-                                <a href="ytube-converter.html" class="nav-link nav2">Youtube Converter</a>
-                                <a href="ytube-to-mp3.html" class="nav-link nav3">Youtube to MP3</a>
                             </div>
-
-                            <div id="languageSwitcher">
-                                <select class="language-select" id="languageSelect">
+                            <div class="languageSwitcher hidden">
+                            </div>
+                            <div id="languageSwitcher1">
+                                <select class="language-select" id="languageSelect" onchange="switchLanguage()">
                                     <option value="en">English</option>
                                 </select>
                             </div>
@@ -98,47 +116,51 @@
 
     <section class="about-sec ">
         <div class="container mx-auto">
-            <div class="flex flex-col gap-[20px]">
-                <div class="flex flex-col gap-[10px]">
+            <div class="flex flex-col gap-[15px] p-[10px]">
+                <div class="flex flex-col gap-[8px]">
                     <h1>Q: Is Ytube2d.com free to use?</h1>
                     <p>A: Yes, Ytube2d is completely free to use.</p>
                 </div>
-                <div class="flex flex-col gap-[10px]">
+                <div class="flex flex-col gap-[8px]">
                     <h1>Q: Is Ytube2d safe for my PC?</h1>
                     <p>A: Yes, Ytube2d is safe. It doesn't contain any viruses or malware.</p>
                 </div>
-                <div class="flex flex-col gap-[10px]">
+                <div class="flex flex-col gap-[8px]">
                     <h1>Q: Do I need an account to download videos?</h1>
                     <p>A: No, you don’t need to register an account. Just click and download.</p>
                 </div>
-                <div class="flex flex-col gap-[10px]">
+                <div class="flex flex-col gap-[8px]">
                     <h1>Q: How do I download videos?</h1>
                     <div class="flex gap-[4px]">
                         <span>A:</span>
-                        <span class="flex flex-col gap-[5px]">
-                            <ul>
-                                <li>1. Search for or paste the link of the video you want to download.</li>
-                                <li>2. Click the "Start" button to begin the conversion process.</li>
-                                <li>3. Choose the video or audio format you want and click the "Download" button.</li>
-                            </ul>
+                        <span class="flex flex-col gap-[4px]">
+                            <div>
+                                <p class="mb-[0px]">1. Search for or paste the link of the video you want to download.
+                                </p>
+                                <p class="mb-[0px]">2. Click the "Start" button to begin the conversion process.</p>
+                                <p class="mb-[0px]">3. Choose the video or audio format you want and click the
+                                    "Download" button.</p>
+                            </div>
                         </span>
                     </div>
                 </div>
-                <div class="flex flex-col gap-[10px]">
+                <div class="flex flex-col gap-[8px]">
                     <h1>Q: Can I download an MP3 file from a YouTube link?</h1>
                     <div class="flex flex-col gap-[4px]">
-                        <p>A: Yes, you can convert a YouTube video to an MP3 file.</p>
-                        <div class="pl-[12px]">
-                            <p>1. Search for or paste the link of the video you want to convert to MP3.</p>
-                            <p>2. Select the “Audio” tab and choose the file type you want to download.</p>
-                            <p>3. Click the "Download" button to download the MP3 file.</p>
+                        <p class="mb-[0px]">A: Yes, you can convert a YouTube video to an MP3 file.</p>
+                        <div class="pl-[18px] ">
+                            <p class="mb-[0px]">1. Search for or paste the link of the video you want to convert to MP3.
+                            </p>
+                            <p class="mb-[0px]">2. Select the “Audio” tab and choose the file type you want to download.
+                            </p>
+                            <p class="mb-[0px]">3. Click the "Download" button to download the MP3 file.</p>
 
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col gap-[10px]">
+                <div class="flex flex-col gap-[8px]">
                     <h1>Q: How can I contact Ytube2d to give feedback?</h1>
-                    <p>A: You can send a message to: info@delemontstudio.com
+                    <p>A: You can send a message to: ytubetwod@gmail.com
                     </p>
                 </div>
             </div>
@@ -164,7 +186,7 @@
                         <a href="FAQ.html" class="footer-faq">FAQ</a>
                         <a href="contact.html" class="footer-contact">Contact</a>
                         <a href="service.html" class="footer-service">Terms of Service</a>
-                        <a href="#" class="footer-privacy">Privacy Policy</a>
+                        <a href="privacy.html" class="footer-privacy">Privacy Policy</a>
                     </div>
                 </div>
                 <div class="horizontal-line"></div>
@@ -172,13 +194,16 @@
             <div class="pt-[20px] pb-[20px] flex gap-[4px] justify-center">
                 <span class="footer-com">Design and Develop By </span>
                 <span>
-                    <a href="https://www.delemontstudio.com/" class="footer-com underline">Delemont Studio</a>
+                    <a href="https://www.delemontstudio.com/" class="footer-com underline" target="_blank">Delemont
+                        Studio</a>
                 </span>
             </div>
         </div>
     </footer>
 
 
+
+    <script src="./assets/js/custom.js"></script>
 
 
 </body>
