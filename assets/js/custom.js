@@ -1024,7 +1024,7 @@ async function updateValue(e) {
   let regex = /^(ftp|http|https):\/\/[^ "]+$/;
   if (regex.test(url)) {
     try {
-      const response = await fetch("http://localhost:3000/api/data-info", {
+      const response = await fetch("https://api.ytube2d.com/api/data-info", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
