@@ -26,7 +26,7 @@ document.querySelector(".languageSwitcher").innerHTML = `
   <option value="tur">Türkçe</option>
   <option value="ar">العربية</option>
   <option value="vi">Tiếng Việt</option>
-</select>;
+</select>
 `;
 let downloadHeading = `
 <h1 class="downloadHead">
@@ -50,7 +50,7 @@ let MP3Heading = `
 `;
 let termsTemplate = `
  <p class="text term-text">By using our service You are accepting our
-                        <span class="terms-span"> <a href="service.html" class="pointer">Terms of Use</a></span>
+                        <span class="terms-span"> <a href="service" class="pointer">Terms of Use</a></span>
                     </p>
 `;
 let CommonContent = `
@@ -102,7 +102,7 @@ let CommonContent = `
 const footerContentTemplate = `
   <div class="container mx-auto">
     <div class="flex flex-col gap-[32px] ">
-      <a href="#" class="footer-img flex items-start screen575:!justify-center">
+      <a href="index.html" class="footer-img flex items-start screen575:!justify-center">
         <img src="assets/images/footer-logo.svg" alt="">
       </a>
       <div class="flex justify-center gap-[70px] screen575:!flex-wrap screen575:!items-center screen575:!gap-[16px]">
@@ -113,7 +113,7 @@ const footerContentTemplate = `
         </div>
         <div class="flex flex-col gap-[16px] pl-[50px] screen575:!w-full screen575:!items-center screen767:!pl-[0px]">
           <a href="About.html" class="footer-about">__FOOTER_ABOUT__</a>
-          <a href="FAQ.html" class="footer-faq">__FOOTER_FAQ__</a>
+          <a href="FAQl.html" class="footer-faq">__FOOTER_FAQ__</a>
           <a href="contact.html" class="footer-contact">__FOOTER_CONTACT__</a>
           <a href="service.html" class="footer-service">__FOOTER_SERVICE__</a>
           <a href="privacy.html" class="footer-privacy">__FOOTER_PRIVACY__</a>
@@ -966,7 +966,7 @@ function updateLanguage(selectedLanguage) {
 
 function updateActiveClass() {
   const currentUrl = window.location.href;
-  const originUrl = window.location.origin + "/index.html";
+  const originUrl = window.location.origin + "/index";
 
   document.querySelectorAll(".nav-link").forEach((nav, index) => {
     nav.classList.remove("active");
@@ -1246,7 +1246,7 @@ async function videoDownload(
       downloadText.textContent = originalText;
     }
   } else {
-    window.open(url, "_blank");
+    window.open(url, "");
   }
 }
 

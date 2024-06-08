@@ -1,0 +1,14 @@
+#remove html file extension https://www.ytube2d.com/index.html
+#to https://www.ytube2d.com/index
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC, L]
+
+
+#remove html file extension https://www.ytube2d.com/ytube-converter.html
+#to https://www.ytube2d.com/ytube-converter
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC, L]
