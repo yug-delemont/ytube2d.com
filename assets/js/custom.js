@@ -1014,6 +1014,8 @@ videoFile.appendChild(div2);
 let fetchData = [];
 input.addEventListener("input", updateValue);
 
+let baseUrl = 'https://api.ytube2d.com'
+
 async function updateValue(e) {
   loader.classList.remove("hidden");
   let url = e.target.value;
@@ -1024,7 +1026,7 @@ async function updateValue(e) {
   let regex = /^(ftp|http|https):\/\/[^ "]+$/;
   if (regex.test(url)) {
     try {
-      const response = await fetch("https://api.ytube2d.com/api/data-info", {
+      const response = await fetch(`${baseUrl}/api/data-info`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -1220,7 +1222,7 @@ async function videoDownload(
     button.disabled = true;
     const originalText = downloadText.textContent;
     downloadText.textContent = "downloading...";
-    const proxyUrl = `http://localhost:3000/proxy?url=${encodeURIComponent(
+    const proxyUrl = `${baseUrl}/proxy?url=${encodeURIComponent(
       url
     )}`;
     try {
