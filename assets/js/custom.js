@@ -1206,15 +1206,6 @@ async function updateValue(e) {
   }
 }
 
-async function fetchThroughProxy(url) {
-  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  const proxiedUrl = `${proxyUrl}${url}`;
-  const response = await fetch(proxiedUrl);
-  if (!response.ok)
-    throw new Error(`Network response was not ok: ${response.statusText}`);
-  return response.blob();
-}
-
 async function videoDownload(
   button,
   url,
@@ -1224,23 +1215,28 @@ async function videoDownload(
   hasAudio
 ) {
   if (hasAudio) {
+    console.log(":rocket: ~ file: custom.js:1261 ~ url :grinning::clap::", url);
     const downloadText = button.querySelector(".video-download");
     button.disabled = true;
     const originalText = downloadText.textContent;
     downloadText.textContent = "downloading...";
+    const proxyUrl = `http://localhost:3000/proxy?url=${encodeURIComponent(
+      url
+    )}`;
     try {
-      const blob = await fetchThroughProxy(url);
-      const urlObject = window.URL.createObjectURL(blob);
+      const response = await fetch(proxyUrl);
+      if (!response.ok) throw new Error("Network response was not ok");
+      const blob = await response.blob();
+      const blobUrl = URL.createObjectURL(blob);
       const a = document.createElement("a");
-      a.href = urlObject;
-      a.download = `video_${title}.${videoContainer}`;
-      a.style.display = "none";
+      a.href = blobUrl;
+      a.download = "video.mp4";
       document.body.appendChild(a);
       a.click();
-      window.URL.revokeObjectURL(urlObject);
+      document.body.removeChild(a);
+      URL.revokeObjectURL(blobUrl);
     } catch (error) {
-      console.error("Error downloading video:", error);
-      alert("Error downloading video. Please try again.");
+      console.error("Download failed:", error);
     } finally {
       button.disabled = false;
       downloadText.textContent = originalText;
@@ -1249,7 +1245,6 @@ async function videoDownload(
     window.open(url, "");
   }
 }
-
 function audioDownload(button, audioUrl, title, AudioContainer) {
   const link = document.createElement("a");
   link.href = audioUrl;
