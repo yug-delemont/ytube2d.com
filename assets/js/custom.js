@@ -50,7 +50,7 @@ let MP3Heading = `
 `;
 let termsTemplate = `
  <p class="text term-text">By using our service You are accepting our
-                        <span class="terms-span"> <a href="service" class="pointer">Terms of Use</a></span>
+                        <span class="terms-span"> <a href="service.html" class="pointer">Terms of Use</a></span>
                     </p>
 `;
 let CommonContent = `
@@ -113,7 +113,7 @@ const footerContentTemplate = `
         </div>
         <div class="flex flex-col gap-[16px] pl-[50px] screen575:!w-full screen575:!items-center screen767:!pl-[0px]">
           <a href="About.html" class="footer-about">__FOOTER_ABOUT__</a>
-          <a href="FAQl.html" class="footer-faq">__FOOTER_FAQ__</a>
+          <a href="FAQ.html" class="footer-faq">__FOOTER_FAQ__</a>
           <a href="contact.html" class="footer-contact">__FOOTER_CONTACT__</a>
           <a href="service.html" class="footer-service">__FOOTER_SERVICE__</a>
           <a href="privacy.html" class="footer-privacy">__FOOTER_PRIVACY__</a>
@@ -999,7 +999,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateLanguage(defaultValue);
 });
 
-const input = document.querySelector("input");
+const inputElement = document.querySelector("input");
 const downloadBtn = document.querySelector(".download-btn");
 const errorMsg = document.querySelector("#error-msg");
 
@@ -1012,19 +1012,37 @@ let div2 = document.createElement("div");
 videoFile.appendChild(div1);
 videoFile.appendChild(div2);
 let fetchData = [];
-input.addEventListener("input", updateValue);
 
-let baseUrl = 'https://api.ytube2d.com'
+let inputValue;
 
-async function updateValue(e) {
-  loader.classList.remove("hidden");
-  let url = e.target.value;
+inputElement.onchange = function () {
+  inputValue = inputElement.value;
+  updateButton();
+};
+updateButton();
+function updateButton() {
+  if (inputValue) {
+    downloadBtn.style.backgroundColor = "red";
+    downloadBtn.style.opacity = "1";
+  } else {
+    downloadBtn.style.backgroundColor = "";
+    downloadBtn.style.opacity = "0.5";
+  }
+}
+downloadBtn.onclick = function () {
+  updateValue();
+};
+let baseUrl = "https://api.ytube2d.com";
+
+async function updateValue() {
+  let url = inputValue;
   let dataInfo = {
     url: url,
   };
 
   let regex = /^(ftp|http|https):\/\/[^ "]+$/;
   if (regex.test(url)) {
+    loader.classList.remove("hidden");
     try {
       const response = await fetch(`${baseUrl}/api/data-info`, {
         method: "POST",
@@ -1037,7 +1055,7 @@ async function updateValue(e) {
       const result = await response.json();
       console.log("Success:", result);
       if (result.success === true) {
-        loader.classList.add("hidden");
+        // loader.classList.add("hidden");
 
         div1.innerHTML = `
         <iframe src=${result.info.videoDetails.embed.iframeUrl} width="464px"  height="259.595px" class="res-image">
@@ -1197,14 +1215,16 @@ async function updateValue(e) {
     } catch (error) {
       console.error("Error:", error);
       errorMsg.textContent = "error!";
+    } finally {
+      loader.classList.add("hidden");
     }
-    downloadBtn.disabled = false;
-    downloadBtn.style.opacity = "1";
-    e.target.style.border = "";
+    // downloadBtn.disabled = false;
+    // downloadBtn.style.opacity = "1";
+    // e.target.style.border = "";
   } else {
-    downloadBtn.disabled = true;
-    downloadBtn.style.opacity = "0.5";
-    e.target.style.border = "";
+    // downloadBtn.disabled = true;
+    // downloadBtn.style.opacity = "0.5";
+    // e.target.style.border = "";
   }
 }
 
@@ -1222,9 +1242,7 @@ async function videoDownload(
     button.disabled = true;
     const originalText = downloadText.textContent;
     downloadText.textContent = "downloading...";
-    const proxyUrl = `${baseUrl}/proxy?url=${encodeURIComponent(
-      url
-    )}`;
+    const proxyUrl = `${baseUrl}/proxy?url=${encodeURIComponent(url)}`;
     try {
       const response = await fetch(proxyUrl);
       if (!response.ok) throw new Error("Network response was not ok");
@@ -1232,7 +1250,7 @@ async function videoDownload(
       const blobUrl = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = blobUrl;
-      a.download = "video.mp4";
+      a.download = `${title}.${videoContainer}`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
