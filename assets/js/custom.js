@@ -999,50 +999,56 @@ document.addEventListener("DOMContentLoaded", () => {
   updateLanguage(defaultValue);
 });
 
-const inputElement = document.querySelector("input");
-const downloadBtn = document.querySelector(".download-btn");
-const errorMsg = document.querySelector("#error-msg");
-
-const loader = document.querySelector("#loading");
-
-const videoFile = document.querySelector("#video-file");
-
-let div1 = document.createElement("div");
-let div2 = document.createElement("div");
-videoFile.appendChild(div1);
-videoFile.appendChild(div2);
 let fetchData = [];
+document.addEventListener("DOMContentLoaded", (event) => {
+  const inputElement = document.querySelector(".input-placeholder");
+  const downloadBtn = document.querySelector(".download-btn");
+  const errorMessage = document.querySelector("#error-msg");
 
-let inputValue;
+  inputElement.addEventListener("paste", (event) => {
+    setTimeout(() => {
+      const url = inputElement.value.trim();
+      let regex = /^(ftp|http|https):\/\/[^ "]+$/;
 
-inputElement.onchange = function () {
-  inputValue = inputElement.value;
-  updateButton();
-};
-updateButton();
-function updateButton() {
-  if (inputValue) {
-    downloadBtn.style.backgroundColor = "red";
-    downloadBtn.style.opacity = "1";
-  } else {
-    downloadBtn.style.backgroundColor = "";
-    downloadBtn.style.opacity = "0.5";
-  }
-}
-downloadBtn.onclick = function () {
-  updateValue();
-};
+      if (regex.test(url) && url.includes("youtube.com")) {
+        downloadBtn.style.opacity = "1";
+        errorMessage.style.visibility = "hidden";
+      } else {
+        downloadBtn.style.opacity = "0.5";
+        errorMessage.textContent =
+          "Error: Invalid link format. Please provide a YouTube link.";
+        errorMessage.style.visibility = "visible";
+      }
+    }, 100);
+  });
+});
+
 let baseUrl = "https://api.ytube2d.com";
 
+let inputValue;
+let dataFetched = false;
 async function updateValue() {
+  const inputElement = document.querySelector(".input-placeholder");
+  const errorMsg = document.querySelector("#error-msg");
+  const loader = document.querySelector("#loading");
+  const downloadBtn = document.querySelector(".download-btn");
+  const videoFile = document.querySelector("#video-file");
+
+  let div1 = document.createElement("div");
+  let div2 = document.createElement("div");
+  videoFile.appendChild(div1);
+  videoFile.appendChild(div2);
+
+  inputValue = inputElement.value;
   let url = inputValue;
-  let dataInfo = {
-    url: url,
-  };
+  let dataInfo = { url: url };
 
   let regex = /^(ftp|http|https):\/\/[^ "]+$/;
-  if (regex.test(url)) {
+  downloadBtn.disabled = false;
+  loader.classList.add("hidden");
+  if (regex.test(url) && url.includes("youtube.com")) {
     loader.classList.remove("hidden");
+    downloadBtn.disabled = true;
     try {
       const response = await fetch(`${baseUrl}/api/data-info`, {
         method: "POST",
@@ -1054,9 +1060,10 @@ async function updateValue() {
 
       const result = await response.json();
       console.log("Success:", result);
-      if (result.success === true) {
-        // loader.classList.add("hidden");
-
+      if (result.success === true && !dataFetched) {
+        downloadBtn.disabled = false;
+        dataFetched = true;
+        loader.classList.add("hidden");
         div1.innerHTML = `
         <iframe src=${result.info.videoDetails.embed.iframeUrl} width="464px"  height="259.595px" class="res-image">
         </iframe>
@@ -1069,7 +1076,7 @@ async function updateValue() {
             <h1 class="video-title">Download</h1>
           </div>
           <div class="video-horizontal-line"></div>
-          <div class="video-quality  flex flex-col ">     
+          <div class="video-quality  flex flex-col ">
           </div>
           <div class="audioFile grid grid-cols-2">
             <h1 class="video-title">Audio (Mp3)</h1>
@@ -1190,7 +1197,7 @@ async function updateValue() {
         let audioQualityHTML = `
     <div class="grid grid-cols-2">
         <div class="flex gap-[16px] items-center justify-center p-[16px]">
-            <p class="video-mp">${AudioContainer}</p>
+            <p class="video-mp">MP3</p>
         </div>
 
         <button class="video-btn flex gap-[8px] justify-center items-center p-[16px]" onClick="audioDownload(this,'${audioUrl}','${title}','${AudioContainer}')" id="Audio-btn">
@@ -1213,18 +1220,20 @@ async function updateValue() {
         videoFile.classList.remove("hidden");
       }
     } catch (error) {
+      loader.classList.add("hidden");
       console.error("Error:", error);
-      errorMsg.textContent = "error!";
+      errorMsg.textContent = "Error: Invalid link provided.";
+      errorMsg.style.visibility = "visible";
+      downloadBtn.style.opacity = "0.5";
     } finally {
       loader.classList.add("hidden");
     }
-    // downloadBtn.disabled = false;
-    // downloadBtn.style.opacity = "1";
-    // e.target.style.border = "";
   } else {
-    // downloadBtn.disabled = true;
-    // downloadBtn.style.opacity = "0.5";
-    // e.target.style.border = "";
+    loader.classList.add("hidden");
+    console.log("Invalid URL Format");
+    errorMsg.textContent = "Error: Invalid link format.";
+    errorMsg.style.visibility = "visible";
+    downloadBtn.style.opacity = "0.5";
   }
 }
 

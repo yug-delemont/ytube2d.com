@@ -624,7 +624,13 @@ footer {
   line-height: 24px;
   letter-spacing: -0.16px;
   width: 120px !important;
+  opacity: 0.5;
 }
+
+.enabled {
+  background: var(--Primary-Red, #f00);
+}
+
 .down-input input {
   width: 100%;
 }
@@ -783,6 +789,8 @@ footer a {
 #error-msg {
   text-align: center;
   color: red;
+  visibility: hidden;
+  margin-top: 20px;
 }
 
 #ytube-video {
