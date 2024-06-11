@@ -883,3 +883,9 @@ p.title {
 .about-sec {
   margin-top: 100px;
 }
+
+.ytubeMp-sec .video-quality,
+.ytubeMp-sec .video-head,
+.ytubeMp-sec .video-line {
+  display: none;
+}

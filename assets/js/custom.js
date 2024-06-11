@@ -1071,11 +1071,11 @@ async function updateValue() {
 
         div2.innerHTML = `
         <div class="qualities">
-          <div class="grid grid-cols-2">
+          <div class="video-head grid grid-cols-2">
             <h1 class="video-title">Video (Mp4)</h1>
             <h1 class="video-title">Download</h1>
           </div>
-          <div class="video-horizontal-line"></div>
+          <div class="video-horizontal-line video-line"></div>
           <div class="video-quality  flex flex-col ">
           </div>
           <div class="audioFile grid grid-cols-2">
@@ -1274,6 +1274,7 @@ async function videoDownload(
     window.open(url, "");
   }
 }
+
 function audioDownload(button, audioUrl, title, AudioContainer) {
   const link = document.createElement("a");
   link.href = audioUrl;
