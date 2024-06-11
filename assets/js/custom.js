@@ -1235,6 +1235,8 @@ async function updateValue() {
     errorMsg.style.visibility = "visible";
     downloadBtn.style.opacity = "0.5";
   }
+  loader.classList.add("hidden");
+  downloadBtn.disabled = true;
 }
 
 async function videoDownload(
