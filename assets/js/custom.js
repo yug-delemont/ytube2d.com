@@ -1000,6 +1000,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 let fetchData = [];
+//when put a link inside input start button is active
 document.addEventListener("DOMContentLoaded", (event) => {
   const inputElement = document.querySelector(".input-placeholder");
   const downloadBtn = document.querySelector(".download-btn");
@@ -1027,12 +1028,21 @@ let baseUrl = "https://api.ytube2d.com";
 
 let inputValue;
 let dataFetched = false;
+
 async function updateValue() {
   const inputElement = document.querySelector(".input-placeholder");
   const errorMsg = document.querySelector("#error-msg");
   const loader = document.querySelector("#loading");
   const downloadBtn = document.querySelector(".download-btn");
   const videoFile = document.querySelector("#video-file");
+
+  // Clear previous data and states
+  videoFile.innerHTML = "";
+  errorMsg.textContent = "";
+  errorMsg.style.visibility = "hidden";
+  downloadBtn.style.opacity = "1";
+  dataFetched = false;
+  fetchData = [];
 
   let div1 = document.createElement("div");
   let div2 = document.createElement("div");
@@ -1042,13 +1052,10 @@ async function updateValue() {
   inputValue = inputElement.value;
   let url = inputValue;
   let dataInfo = { url: url };
-
   let regex = /^(ftp|http|https):\/\/[^ "]+$/;
-  downloadBtn.disabled = false;
   loader.classList.add("hidden");
   if (regex.test(url) && url.includes("youtube.com")) {
     loader.classList.remove("hidden");
-    downloadBtn.disabled = true;
     try {
       const response = await fetch(`${baseUrl}/api/data-info`, {
         method: "POST",
@@ -1061,7 +1068,6 @@ async function updateValue() {
       const result = await response.json();
       console.log("Success:", result);
       if (result.success === true && !dataFetched) {
-        downloadBtn.disabled = false;
         dataFetched = true;
         loader.classList.add("hidden");
         div1.innerHTML = `
@@ -1106,8 +1112,15 @@ async function updateValue() {
           return numA - numB;
         });
 
+        //video download- audio data and noaudio data
+
         let audioFormats = [];
+        console.log("🚀 ~ file: custom.js:1110 ~ audioFormats:", audioFormats);
         let noAudioFormats = [];
+        console.log(
+          "🚀 ~ file: custom.js:1112 ~ noAudioFormats:",
+          noAudioFormats
+        );
 
         uniqueQualities.forEach((qualityLabel) => {
           fetchData[0]
@@ -1183,6 +1196,8 @@ async function updateValue() {
         let title = videoTitle;
         console.log(title);
 
+        //Audio-download
+
         let audioHtml = generateHtml(audioFormats);
         let noAudioHtml = generateHtml(noAudioFormats);
         let quality_Label = audioHtml + noAudioHtml;
@@ -1234,11 +1249,12 @@ async function updateValue() {
     errorMsg.textContent = "Error: Invalid link format.";
     errorMsg.style.visibility = "visible";
     downloadBtn.style.opacity = "0.5";
+    downloadBtn.disabled = true;
   }
   loader.classList.add("hidden");
-  downloadBtn.disabled = true;
 }
 
+//video-download
 async function videoDownload(
   button,
   url,
@@ -1277,6 +1293,7 @@ async function videoDownload(
   }
 }
 
+//Audio-download
 function audioDownload(button, audioUrl, title, AudioContainer) {
   const link = document.createElement("a");
   link.href = audioUrl;
