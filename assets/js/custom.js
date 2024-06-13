@@ -1077,16 +1077,16 @@ async function updateValue() {
 
         div2.innerHTML = `
         <div class="qualities">
-          <div class="video-head grid grid-cols-2">
-            <h1 class="video-title">Video (Mp4)</h1>
-            <h1 class="video-title">Download</h1>
+          <div class="video-head grid grid-cols-2 ">
+            <h1 class="video-title flex justify-start">Video (Mp4)</h1>
+            <h1 class="video-title flex justify-end p-[16px]">Download</h1>
           </div>
           <div class="video-horizontal-line video-line"></div>
           <div class="video-quality  flex flex-col ">
           </div>
           <div class="audioFile grid grid-cols-2">
-            <h1 class="video-title">Audio (Mp3)</h1>
-            <h1 class="video-title">Download</h1>
+            <h1 class="video-title flex justify-start">Audio (Mp3)</h1>
+            <h1 class="video-title flex justify-end p-[16px]">Download</h1>
           </div>
           <div class="video-horizontal-line"></div>
           <div class="Audio-quality">
@@ -1156,29 +1156,40 @@ async function updateValue() {
               let videoUrl = format.url;
               let videoContainer = format.container;
               let qualityLabel = format.qualityLabel;
+
               let hasAudio = format.audioBitrate != null;
 
               let svgIcon = hasAudio
                 ? `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-             <path d="M2 9.99997V14C2 16 3 17 5 17H6.43C6.8 17 7.17 17.11 7.49 17.3L10.41 19.13C12.93 20.71 15 19.56 15 16.59V7.40997C15 4.42997 12.93 3.28997 10.41 4.86997L7.49 6.69997C7.17 6.88997 6.8 6.99997 6.43 6.99997H5C3 6.99997 2 7.99997 2 9.99997Z" stroke="#292D32" stroke-width="1.5" />
-             <path d="M18 8C19.78 10.37 19.78 13.63 18 16" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-             <path d="M19.8301 5.5C22.7201 9.35 22.7201 14.65 19.8301 18.5" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-           </svg>`
+                 <path d="M2 9.99997V14C2 16 3 17 5 17H6.43C6.8 17 7.17 17.11 7.49 17.3L10.41 19.13C12.93 20.71 15 19.56 15 16.59V7.40997C15 4.42997 12.93 3.28997 10.41 4.86997L7.49 6.69997C7.17 6.88997 6.8 6.99997 6.43 6.99997H5C3 6.99997 2 7.99997 2 9.99997Z" stroke="#292D32" stroke-width="1.5" />
+                 <path d="M18 8C19.78 10.37 19.78 13.63 18 16" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                 <path d="M19.8301 5.5C22.7201 9.35 22.7201 14.65 19.8301 18.5" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+               </svg>`
                 : `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 8.36997V7.40997C15 4.42997 12.93 3.28997 10.41 4.86997L7.49 6.69997C7.17 6.88997 6.8 6.99997 6.43 6.99997H5C3 6.99997 2 7.99997 2 9.99997V14C2 16 3 17 5 17H7" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10.4099 19.13C12.9299 20.71 14.9999 19.56 14.9999 16.59V12.95" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M18.81 9.41998C19.71 11.57 19.44 14.08 18 16" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M21.1501 7.79999C22.6201 11.29 22.1801 15.37 19.8301 18.5" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M22 2L2 22" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>`;
-
+                <path d="M15 8.36997V7.40997C15 4.42997 12.93 3.28997 10.41 4.86997L7.49 6.69997C7.17 6.88997 6.8 6.99997 6.43 6.99997H5C3 6.99997 2 7.99997 2 9.99997V14C2 16 3 17 5 17H7" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10.4099 19.13C12.9299 20.71 14.9999 19.56 14.9999 16.59V12.95" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18.81 9.41998C19.71 11.57 19.44 14.08 18 16" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21.1501 7.79999C22.6201 11.29 22.1801 15.37 19.8301 18.5" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 2L2 22" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>`;
+              let qualityNumber = parseInt(qualityLabel);
               return `
         <div class="grid grid-cols-2">
-          <div class="flex gap-[16px] items-center justify-center p-[16px]">
+          <div class="flex gap-[16px] items-center justify-start p-[16px]">
             <p class="video-mp">${qualityLabel}(${videoContainer})</p>
             ${svgIcon}
+        ${
+          qualityNumber > 1000
+            ? `<svg width="29" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="39" height="40" rx="10" fill="black"/>
+<path d="M18.3475 14.88V26H16.5235V21.136H11.2915V26H9.4675V14.88H11.2915V19.648H16.5235V14.88H18.3475ZM24.2208 14.88C25.4048 14.88 26.4394 15.1093 27.3248 15.568C28.2208 16.016 28.9088 16.6667 29.3888 17.52C29.8794 18.3627 30.1248 19.3493 30.1248 20.48C30.1248 21.6107 29.8794 22.592 29.3888 23.424C28.9088 24.256 28.2208 24.896 27.3248 25.344C26.4394 25.7813 25.4048 26 24.2208 26H20.5888V14.88H24.2208ZM24.2208 24.512C25.5221 24.512 26.5194 24.16 27.2128 23.456C27.9061 22.752 28.2528 21.76 28.2528 20.48C28.2528 19.1893 27.9061 18.1813 27.2128 17.456C26.5194 16.7307 25.5221 16.368 24.2208 16.368H22.4128V24.512H24.2208Z" fill="white"/>
+</svg>
+`
+            : ``
+        }
+         
           </div>
-          <button class="video-btn flex gap-[8px] justify-center items-center p-[16px]" onClick="videoDownload(this, '${videoUrl}', '${qualityLabel}', '${videoContainer}', '${title}', ${hasAudio})" id="down-btn2">
+          <button class="video-btn flex gap-[8px] justify-end items-center p-[16px]" onClick="videoDownload(this, '${videoUrl}', '${qualityLabel}', '${videoContainer}', '${title}', ${hasAudio})" id="down-btn2">
             <p class="video-download">Download</p>
             <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16.9626 8.6678L16.9674 8.66821C18.877 8.83134 20.1692 9.41959 20.9973 10.4201C21.8342 11.4312 22.27 12.9501 22.27 15.13V15.26C22.27 17.647 21.7556 19.2345 20.7531 20.2348C19.7503 21.2354 18.1574 21.75 15.76 21.75H9.23998C6.8425 21.75 5.24996 21.2354 4.24728 20.2327C3.24461 19.23 2.72998 17.6375 2.72998 15.24V15.11C2.72998 12.9445 3.15855 11.4341 3.98232 10.425C4.79616 9.42794 6.06528 8.83643 7.94093 8.65838C8.08211 8.64984 8.21014 8.7635 8.22234 8.88858C8.2355 9.02348 8.13711 9.14824 7.99309 9.16223C6.35973 9.31321 5.12127 9.78418 4.31507 10.8052C3.52336 11.8078 3.22998 13.2422 3.22998 15.12V15.25C3.22998 17.3197 3.5908 18.8705 4.60518 19.8848C5.61955 20.8992 7.17035 21.26 9.23998 21.26H15.76C17.8296 21.26 19.3804 20.8992 20.3948 19.8848C21.4092 18.8705 21.77 17.3197 21.77 15.25V15.12C21.77 13.2318 21.4715 11.7903 20.6646 10.7867C19.8445 9.76667 18.586 9.30278 16.9261 9.16214C16.779 9.14652 16.6858 9.01993 16.6976 8.89858C16.7124 8.74671 16.833 8.65543 16.9626 8.6678Z" fill="#FF0000" stroke="#FF0000"/>
@@ -1211,11 +1222,11 @@ async function updateValue() {
 
         let audioQualityHTML = `
     <div class="grid grid-cols-2">
-        <div class="flex gap-[16px] items-center justify-center p-[16px]">
+        <div class="flex gap-[16px] items-center justify-start p-[16px]">
             <p class="video-mp">MP3</p>
         </div>
 
-        <button class="video-btn flex gap-[8px] justify-center items-center p-[16px]" onClick="audioDownload(this,'${audioUrl}','${title}','${AudioContainer}')" id="Audio-btn">
+        <button class="video-btn flex gap-[8px] justify-end items-center p-[16px]" onClick="audioDownload(this,'${audioUrl}','${title}','${AudioContainer}')" id="Audio-btn">
             <p class="video-download">Download</p>
             <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16.9626 8.6678L16.9674 8.66821C18.877 8.83134 20.1692 9.41959 20.9973 10.4201C21.8342 11.4312 22.27 12.9501 22.27 15.13V15.26C22.27 17.647 21.7556 19.2345 20.7531 20.2348C19.7503 21.2354 18.1574 21.75 15.76 21.75H9.23998C6.8425 21.75 5.24996 21.2354 4.24728 20.2327C3.24461 19.23 2.72998 17.6375 2.72998 15.24V15.11C2.72998 12.9445 3.15855 11.4341 3.98232 10.425C4.79616 9.42794 6.06528 8.83643 7.94093 8.65838C8.08211 8.64984 8.21014 8.7635 8.22234 8.88858C8.2355 9.02348 8.13711 9.14824 7.99309 9.16223C6.35973 9.31321 5.12127 9.78418 4.31507 10.8052C3.52336 11.8078 3.22998 13.2422 3.22998 15.12V15.25C3.22998 17.3197 3.5908 18.8705 4.60518 19.8848C5.61955 20.8992 7.17035 21.26 9.23998 21.26H15.76C17.8296 21.26 19.3804 20.8992 20.3948 19.8848C21.4092 18.8705 21.77 17.3197 21.77 15.25V15.12C21.77 13.2318 21.4715 11.7903 20.6646 10.7867C19.8445 9.76667 18.586 9.30278 16.9261 9.16214C16.779 9.14652 16.6858 9.01993 16.6976 8.89858C16.7124 8.74671 16.833 8.65543 16.9626 8.6678Z" fill="#FF0000" stroke="#FF0000" />

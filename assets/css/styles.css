@@ -814,7 +814,7 @@ footer a {
   font-weight: 600;
   line-height: 32px;
   letter-spacing: -0.24px;
-  padding: 16px 0px 16px 0px;
+  padding: 16px 0px 16px 16px;
 }
 .video-horizontal-line {
   height: 1px;
