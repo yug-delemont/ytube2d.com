@@ -3,9 +3,9 @@ document.querySelector("#nav-btn").addEventListener("click", function () {
 });
 
 document.querySelector(".header-links-left").innerHTML = `
-  <a href="index.html" class="nav-link nav1"></a>
-  <a href="ytube-converter.html" class="nav-link nav2"></a>
-  <a href="ytube-to-mp3.html" class="nav-link nav3"></a>
+  <a href="index" class="nav-link nav1"></a>
+  <a href="ytube-converter" class="nav-link nav2"></a>
+  <a href="ytube-to-mp3" class="nav-link nav3"></a>
 `;
 
 document.querySelector(".languageSwitcher").innerHTML = `
@@ -970,7 +970,6 @@ function updateActiveClass() {
 
   document.querySelectorAll(".nav-link").forEach((nav, index) => {
     nav.classList.remove("active");
-
     if (
       (currentUrl === window.location.origin + "/" ||
         currentUrl === originUrl) &&
